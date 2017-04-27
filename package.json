@@ -1,7 +1,7 @@
 {
   "name": "maplink-geocoder",
   "version": "1.0.0",
-  "description": "",
+  "description": "A multiplatform geocoder with structured and freeform methods",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,5 +12,8 @@
   },
   "author": "Maplink",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/maplinkwebservices/maplink-geocoder#readme"
+  "homepage": "https://bitbucket.org/maplinkwebservices/maplink-geocoder#readme",
+  "dependencies": {
+    "loadash": "0.0.1"
+  }
 }
