@@ -14,6 +14,7 @@
   "license": "ISC",
   "homepage": "https://bitbucket.org/maplinkwebservices/maplink-geocoder#readme",
   "dependencies": {
+    "chai": "^3.5.0",
     "loadash": "0.0.1"
   }
 }
