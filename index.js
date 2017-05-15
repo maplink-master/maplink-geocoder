@@ -1,8 +1,5 @@
-const geocoder = require ("./src/geocoder/index.js");
-try {
-	let geo = geocoder("userlbs", "dxOBQD3pblVAzxOAzTVsynO8dxOLcMkIcDkBclZLcIOsyIZm");
-	geo.tokenGenerator("http://api.maplink.com.br/v0/search?q=rio de janeiro");
-	console.log(geo);
-} catch (e) {
-	console.error(e);
-}
+const geocoderFullAuth = require ("./src")("dxOBQD3pblVAzxOAzTVsynO8dxOLcMkIcDkBclZLcIOsyIZm", "userlbs");
+const geocoderAuth = require ("./src")("NGKiNG2iNJUkNIUkOGoBNXoAOj==");
+
+geocoderFullAuth.freeform('rua fidencio ramos').then(console.log).catch(error => console.log('freeform error'))
+geocoderAuth.freeform('rua fidencio ramos').then(console.log).catch(error => console.log('freeform error'))

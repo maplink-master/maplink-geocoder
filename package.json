@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha test --recursive",
-    "start": "node debug index.js"
+    "debug": "node debug index.js"
   },
   "repository": {
     "type": "git",
@@ -15,7 +15,12 @@
   "license": "ISC",
   "homepage": "https://bitbucket.org/maplinkwebservices/maplink-geocoder#readme",
   "dependencies": {
-    "chai": "^3.5.0",
-    "loadash": "0.0.1"
+    "bluebird": "^3.5.0",
+    "loadash": "0.0.1",
+    "request": "^2.81.0",
+    "request-promise": "^4.2.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0"
   }
 }
