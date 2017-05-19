@@ -1,5 +1,4 @@
-const Promise = require('bluebird'),
-	Auth = require('./auth'),
+const Auth = require('./auth'),
 	freeform = require('./geocode/freeform'),
 	structured = require('./geocode/structured')
 
@@ -12,7 +11,7 @@ module.exports = function(clientSecret="", clientKey="") {
 	const auth = new Auth(clientSecret, clientKey)
 
 	return {
-		freeform: freeform(auth),
-		structured: structured(auth)
+		search: freeform(auth),
+		geocode: structured(auth)
 	}
 }

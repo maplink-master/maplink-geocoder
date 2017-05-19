@@ -1,16 +1,21 @@
-const request = require('request-promise')
-const auth = require('../auth')
+const request = require('request-promise'),
+  auth = require('../auth')
 
 module.exports = function(auth) {
 
-  return function(address) {
+  return function(query) {
 
-    let bytelike = unescape(encodeURIComponent(address))
+    if (!query) {
+      throw new Error('Address must be informed')
+    }
+    else if (typeof query !== 'string') {
+      throw new Error('The argument must be a string')
+    }
+
+    let bytelike = unescape(encodeURIComponent(query))
     let host = `http://api.maplink.com.br/v0/search?q=${bytelike}`
-    let token = auth.generator(host, {})
+    let url = auth.parse(host, {})
 
-    host += `&token=${token}`
-
-    return request(host)
+    return request(url)
   }
 }

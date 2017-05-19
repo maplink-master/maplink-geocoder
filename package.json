@@ -2,21 +2,26 @@
   "name": "maplink-geocoder",
   "version": "1.0.0",
   "description": "A multiplatform geocoder with structured and freeform methods",
-  "main": "index.js",
+  "keywords": "maplink,geocode,geocoder",
+  "homepage": "https://github.com/maplink/maplink-geocoder",
+  "bugs": "https://github.com/maplink/maplink-geocoder",
+  "engines" : { "node" : ">=4.0.0" },
+  "license": "ISC",
+  "main": "src/index.js",
   "scripts": {
     "test": "mocha test --recursive",
     "debug": "node debug index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org/maplinkwebservices/maplink-geocoder.git"
+    "url": "git+ssh://git@github.com:maplink/maplink-geocoder.git"
   },
   "author": "Maplink",
-  "license": "ISC",
-  "homepage": "https://bitbucket.org/maplinkwebservices/maplink-geocoder#readme",
+
   "dependencies": {
     "bluebird": "^3.5.0",
     "loadash": "0.0.1",
+    "qs": "^6.4.0",
     "request": "^2.81.0",
     "request-promise": "^4.2.1"
   },
