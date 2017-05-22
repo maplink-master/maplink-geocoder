@@ -30,10 +30,10 @@ function generate(uri, body, credentials) {
 	return `${uri}&applicationCode=${credentials.clientKey}&signature=${signature}`
 }
 
-module.exports = function(clientKey, clientSecret) {
+module.exports = function(clientSecret, clientKey) {
 
-	this.clientKey = clientKey
 	this.clientSecret = clientSecret
+	this.clientKey = clientKey
 
 	return {
 		parse: (uri, body) => generate(uri, body, this)
