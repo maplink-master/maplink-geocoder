@@ -5,11 +5,13 @@
   "keywords": "maplink,geocode,geocoder",
   "homepage": "https://github.com/maplink/maplink-geocoder",
   "bugs": "https://github.com/maplink/maplink-geocoder",
-  "engines" : { "node" : ">=4.0.0" },
+  "engines": {
+    "node": ">=4.0.0"
+  },
   "license": "ISC",
   "main": "src/index.js",
   "scripts": {
-    "test": "mocha test --recursive",
+    "test": "mocha test --recursive --watch --timeout 999999",
     "debug": "node debug index.js"
   },
   "repository": {
@@ -17,7 +19,6 @@
     "url": "git+ssh://git@github.com:maplink/maplink-geocoder.git"
   },
   "author": "Maplink",
-
   "dependencies": {
     "bluebird": "^3.5.0",
     "loadash": "0.0.1",
@@ -26,6 +27,7 @@
     "request-promise": "^4.2.1"
   },
   "devDependencies": {
-    "chai": "^3.5.0"
+    "chai": "^3.5.0",
+    "ping": "^0.2.2"
   }
 }
