@@ -26,7 +26,7 @@ You must pass a JSON in the geocode parameters. For the parameter options, take 
 
 ```javascript
 // Structured geocode
-geocoder.geocode({
+geocoder.structured({
     'streetName': 'Rua Fidêncio Ramos',
     'houseNumber': '343',
     'state': 'SP',

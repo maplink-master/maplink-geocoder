@@ -12,6 +12,6 @@ module.exports = function(clientSecret="", clientKey="") {
 
 	return {
 		search: freeform(auth),
-		geocode: structured(auth)
+		structured: structured(auth)
 	}
 }

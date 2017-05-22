@@ -1,16 +1,16 @@
 const url = require("url"),
   crypto = require("crypto")
 
-function requestSigner( completeUrl, key, body ){
+function requestSigner( completeUrl, applicationCode, secretkey, body ){
 
     let parsedUrl = url.parse( completeUrl )
-    let signatureElements = parsedUrl.path
+    let signatureElements = `${parsedUrl.path}&applicationCode=${applicationCode}`;
 
     if (body) {
       signatureElements += body
     }
 
-    let usablePrivateKey = key.replace( "-", "+" ).replace( "_", "/" )
+    let usablePrivateKey = secretkey.replace( "-", "+" ).replace( "_", "/" )
     let privateKeyBuffer = new Buffer( usablePrivateKey, 'base64' )
     let pathAndQueryBuffer = new Buffer( signatureElements, 'utf8' )
     let hash = crypto.createHmac( 'sha1', privateKeyBuffer ).update( pathAndQueryBuffer ).digest( 'base64' )
@@ -25,15 +25,15 @@ function generate(uri, body, credentials) {
 		return `${uri}&token=${credentials.clientSecret}`
 	}
 
-	let signature = requestSigner(uri, credentials.clientSecret)
+	let signature = requestSigner(uri, credentials.clientKey, credentials.clientSecret)
 
 	return `${uri}&applicationCode=${credentials.clientKey}&signature=${signature}`
 }
 
-module.exports = function(clientSecret, clientKey) {
+module.exports = function(clientKey, clientSecret) {
 
-	this.clientSecret = clientSecret
 	this.clientKey = clientKey
+	this.clientSecret = clientSecret
 
 	return {
 		parse: (uri, body) => generate(uri, body, this)
