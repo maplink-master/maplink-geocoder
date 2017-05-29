@@ -14,10 +14,10 @@ For creating an instance of the Maplink Geocoder, you must have a Token or a Cli
 
 ```javascript
 // If you have the token
-const geocoder = require ('maplink-geocoder')('<token>');
+const geocoder = require ('@maplink/maplink-geocoder')('<token>');
 // or
 // if you have the client secret and the key
-const geocoder = require ('maplink-geocoder')('<secret>', '<key>');
+const geocoder = require ('@maplink/maplink-geocoder')('<secret>', '<key>');
 ```
 
 **Geocode** (Structured)
